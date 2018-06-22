@@ -21,7 +21,7 @@
 
 	// Compose a simple HTML email message
 	$body = '<html><body>';
-	$body .= '<h2>Contact Details of Indiom</h2>';
+	$body .= '<h2>Contact Details of PROJECT NAME</h2>';
 	$body .= '<table border="1">
 	            <tr><th>NAME</th><td>'.$name.'</td></tr>
 	            <tr><th>EMAIL</th><td>'.$email.'</td></tr>
