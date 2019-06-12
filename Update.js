@@ -39,7 +39,7 @@ $('#contact-form-submit3').on('click',function(){
             //clear all fields
             $('#contact-form').trigger("reset");
 
-            /* file download  start */
+            /* =================== file download  start =================== */
               var req = new XMLHttpRequest();
               req.open("GET", "/img/aqua.pdf", true);
               req.responseType = "blob";
@@ -54,7 +54,7 @@ $('#contact-form-submit3').on('click',function(){
               };
 
               req.send();
-            /* file download  end */
+            /* =================== file download  end ================== */
           }
           else{
             $('#submitMessage3').html("<div class='alert alert-danger'>");
