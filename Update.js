@@ -28,6 +28,7 @@ $('#contact-form-submit3').on('click',function(){
             console.log(response);
           if(response == 'success')
           {
+
             $('#submitMessage3').html("<div class='alert alert-success'>");
             $('#submitMessage3 > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                 .append("</button>");
@@ -37,24 +38,11 @@ $('#contact-form-submit3').on('click',function(){
                 .append('</div>');
             $('#submitMessage3').delay(3000).fadeOut();
             //clear all fields
-            $('#contact-form').trigger("reset");
-
-            /* =================== file download  start =================== */
-              var req = new XMLHttpRequest();
-              req.open("GET", "/img/aqua.pdf", true);
-              req.responseType = "blob";
-
-              req.onload = function (event) {
-                var blob = req.response;
-                console.log(blob.size);
-                var link=document.createElement('a');
-                link.href=window.URL.createObjectURL(blob);
-                link.download="aqua_" + new Date() + ".pdf";
-                link.click();
-              };
-
-              req.send();
-            /* =================== file download  end ================== */
+            $('#contact-form3').trigger("reset");
+    
+            /* =================== Download PDF =================== */
+            downloadPdf();
+            /* =================== Download PDF END =================== */
           }
           else{
             $('#submitMessage3').html("<div class='alert alert-danger'>");
@@ -72,6 +60,11 @@ $('#contact-form-submit3').on('click',function(){
   }
 });
 
+function downloadPdf(){
+   var a = $("<a target='blank'>").attr("href", "img/aqua.pdf").attr("download", "aqua.pdf").appendTo("body");
+    a[0].click();
+    a.remove(); 
+}
 
 /*
 -----------------------------------------------
